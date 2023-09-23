@@ -1,2 +1,50 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿Console.WriteLine("Введите количество элементов массива");
+int massiveLength = Convert.ToInt32(Console.ReadLine());
+
+string[] array1 = new string[massiveLength];
+
+
+void GetArray(string[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.WriteLine($"Введите {i + 1} элемент массива");
+        array[i] = Console.ReadLine();
+    }
+}
+
+string[] CutArray(string[] array)
+{
+    int newMassiveLength = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i].Length <= 3)
+        newMassiveLength++;
+    }
+
+    string[] array2 = new string[newMassiveLength];
+    int j = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i].Length <= 3)
+        {
+            array2[j] = array[i];
+            j++;
+        }
+    }
+    return array2;
+}
+
+void PrintArray(string[] array)
+{
+    Console.Write("[");
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write($"{array[i]} ");
+}
+    Console.Write("]");
+}
+
+GetArray(array1);
+PrintArray(array1);
+PrintArray(CutArray(array1));
