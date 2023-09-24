@@ -23,6 +23,7 @@ string[] CutArray(string[] array)
     }
 
     string[] array2 = new string[newMassiveLength];
+    
     int j = 0;
     for (int i = 0; i < array.Length; i++)
     {
