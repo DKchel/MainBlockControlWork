@@ -38,7 +38,7 @@ string[] CutArray(string[] array)
 
 void PrintArray(string[] array)
 {
-    Console.WriteLine("[" + string.Join(" ", array) + "]");
+    Console.WriteLine("[" + string.Join(",", array) + "]");
 }
 
 GetArray(array1);
